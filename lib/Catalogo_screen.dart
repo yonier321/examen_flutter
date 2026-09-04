@@ -107,7 +107,7 @@ class _CatalogoScreenState extends State<CatalogoScreen> {
   }
 
   void _irADescripciones() {
-    Navigator.push(context, _crearRutaAnimada(const DescripcionesScreen()));
+    Navigator.push(context, _crearRutaAnimada(const DetalleVehiculoScreen()));
   }
 
   void _toggleFavorite(String id) {
