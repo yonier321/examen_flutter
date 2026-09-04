@@ -2,8 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-// Cuando tu compañero suba su archivo de Catálogo, descomentas la siguiente línea:
-// import 'catalogo_screen.dart';
+import 'Catalogo_screen.dart';
 
 class InicioDeSesionScreen extends StatelessWidget {
   const InicioDeSesionScreen({Key? key}) : super(key: key);
@@ -19,13 +18,13 @@ class InicioDeSesionScreen extends StatelessWidget {
         const end = Offset.zero;
         const curve = Curves.easeInOut;
 
-        var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+        var tween = Tween(
+          begin: begin,
+          end: end,
+        ).chain(CurveTween(curve: curve));
         var offsetAnimation = animation.drive(tween);
 
-        return SlideTransition(
-          position: offsetAnimation,
-          child: child,
-        );
+        return SlideTransition(position: offsetAnimation, child: child);
       },
       transitionDuration: const Duration(milliseconds: 400),
     );
@@ -97,7 +96,10 @@ class InicioDeSesionScreen extends StatelessWidget {
                 ),
               ),
               child: SingleChildScrollView(
-                padding: const EdgeInsets.symmetric(horizontal: 28.0, vertical: 32.0),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 28.0,
+                  vertical: 32.0,
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -112,10 +114,7 @@ class InicioDeSesionScreen extends StatelessWidget {
                     const SizedBox(height: 6),
                     const Text(
                       'Sign in to access your premium collection',
-                      style: TextStyle(
-                        fontSize: 13,
-                        color: Color(0xFF757575),
-                      ),
+                      style: TextStyle(fontSize: 13, color: Color(0xFF757575)),
                     ),
                     const SizedBox(height: 28),
 
@@ -134,11 +133,19 @@ class InicioDeSesionScreen extends StatelessWidget {
                       style: const TextStyle(fontSize: 14),
                       decoration: InputDecoration(
                         hintText: 'name@luxury.com',
-                        hintStyle: const TextStyle(color: Color(0xFFB0B0B0), fontSize: 14),
-                        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                        hintStyle: const TextStyle(
+                          color: Color(0xFFB0B0B0),
+                          fontSize: 14,
+                        ),
+                        contentPadding: const EdgeInsets.symmetric(
+                          horizontal: 16,
+                          vertical: 14,
+                        ),
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
-                          borderSide: const BorderSide(color: Color(0xFFE0E0E0)),
+                          borderSide: const BorderSide(
+                            color: Color(0xFFE0E0E0),
+                          ),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
@@ -180,11 +187,19 @@ class InicioDeSesionScreen extends StatelessWidget {
                       style: const TextStyle(fontSize: 14),
                       decoration: InputDecoration(
                         hintText: '••••••••',
-                        hintStyle: const TextStyle(color: Color(0xFFB0B0B0), fontSize: 14),
-                        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                        hintStyle: const TextStyle(
+                          color: Color(0xFFB0B0B0),
+                          fontSize: 14,
+                        ),
+                        contentPadding: const EdgeInsets.symmetric(
+                          horizontal: 16,
+                          vertical: 14,
+                        ),
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
-                          borderSide: const BorderSide(color: Color(0xFFE0E0E0)),
+                          borderSide: const BorderSide(
+                            color: Color(0xFFE0E0E0),
+                          ),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
@@ -209,7 +224,10 @@ class InicioDeSesionScreen extends StatelessWidget {
                         ),
                         onPressed: () {
                           // Al integrar con la rama del Catálogo, descomentar:
-                          // Navigator.push(context, _crearRutaAnimada(const CatalogoScreen()));
+                          Navigator.push(
+                            context,
+                            _crearRutaAnimada(const CatalogoScreen()),
+                          );
                         },
                         child: const Text(
                           'Login',
@@ -260,7 +278,12 @@ class InicioDeSesionScreen extends StatelessWidget {
                             child: Image.asset(
                               'assets/google_logo.png',
                               height: 20,
-                              errorBuilder: (context, error, stackTrace) => const Icon(Icons.g_mobiledata, size: 24, color: Colors.black),
+                              errorBuilder: (context, error, stackTrace) =>
+                                  const Icon(
+                                    Icons.g_mobiledata,
+                                    size: 24,
+                                    color: Colors.black,
+                                  ),
                             ),
                           ),
                         ),
@@ -275,7 +298,11 @@ class InicioDeSesionScreen extends StatelessWidget {
                               ),
                             ),
                             onPressed: () {},
-                            child: const Icon(Icons.apple, color: Colors.black, size: 22),
+                            child: const Icon(
+                              Icons.apple,
+                              color: Colors.black,
+                              size: 22,
+                            ),
                           ),
                         ),
                       ],
@@ -286,7 +313,10 @@ class InicioDeSesionScreen extends StatelessWidget {
                     Center(
                       child: RichText(
                         text: const TextSpan(
-                          style: TextStyle(fontSize: 13, color: Color(0xFF666666)),
+                          style: TextStyle(
+                            fontSize: 13,
+                            color: Color(0xFF666666),
+                          ),
                           children: [
                             TextSpan(text: "Don't have an account? "),
                             TextSpan(
